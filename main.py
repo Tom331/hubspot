@@ -65,13 +65,13 @@ def createCompanyAndTask(company, task):
             }
         }
 
-        url = 'https://api.hubspot.com/crm/v3/objects/tasks?hapikey=2c4a78cf-ea9b-40fb-b802-f709e5cf662d'
+        url = 'https://api.hubspot.com/crm/v3/objects/tasks?hapikey={removed for security}'
         req = requests.post(url, json=task) # POST request to create task
         taskId = req.json().get('id')
 
         # Create association from task to company:
         # I got "192" by retrieving the association type from the associations API
-        url = 'https://api.hubspot.com/crm/v3/objects/tasks/' + taskId + '/associations/companies/' + companyId + '/192?hapikey=2c4a78cf-ea9b-40fb-b802-f709e5cf662d'
+        url = 'https://api.hubspot.com/crm/v3/objects/tasks/' + taskId + '/associations/companies/' + companyId + '/192?hapikey={removed for security}'
         req = requests.put(url, json=task) # POST request to create task
 
 
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     # Auth
     from hubspot import HubSpot
 
-    apiKey = '2c4a78cf-ea9b-40fb-b802-f709e5cf662d'
+    apiKey = '{removed for security}'
 
     api_client = HubSpot(api_key=apiKey)
 
