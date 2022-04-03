@@ -72,7 +72,7 @@ def createCompanyAndTask(company, task):
         # Create association from task to company:
         # I got "192" by retrieving the association type from the associations API
         url = 'https://api.hubspot.com/crm/v3/objects/tasks/' + taskId + '/associations/companies/' + companyId + '/192?hapikey={removed for security}'
-        req = requests.put(url, json=task) # POST request to create task
+        req = requests.put(url, json=task) # PUT request to create association
 
 
 
